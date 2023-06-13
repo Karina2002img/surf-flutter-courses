@@ -4,15 +4,15 @@ You can describe your results in any language that is convenient for you, not ju
 
 ## Description
 
-[Describe what you have done]
+Из сложного словаря (по своей структуре) создала 2 новых словаря с нужными мне данными для дальнейшей их обработки. Объединила словари, что по умолчанию удалило все дубликаты. Нашла средний возраст всей техники. Затем отфильтровала словарь в порядке увеличения по значению. Затем отделила от словаря половину, чтобы отпределить средний возраст 50 % самой старой техники.
 
 ## How to
 
-[Describe how to run your application if there are any issues]
+Не очень понимаю, что это значит.
 
 ## Problems
 
-[Describe the problems you encountered]
+Самым сложным для меня было вычленение нужных данных из данной структуры. 
 
 ## More
 
