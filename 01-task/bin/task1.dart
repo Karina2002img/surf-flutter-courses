@@ -1,3 +1,9 @@
+/* Задание:Для аналитика потребовалось узнать средний возраст всей техники
+и средний возраст техники для 50% самой старой техники
+(нужно отсортировать всю технику по возрасту, взять 50% самой старой техники
+ и вычислить их средний возраст).
+*/
+//Исходный код:
 enum Countries { brazil, russia, turkish, spain, japan }
 
 class Territory {
@@ -151,20 +157,20 @@ final mapAfter2010 = {
     ),
   ],
 };
-
+//Решение задачи:
 void main(){
   Map<String, int> newMapBefore2010 = {};
-  for (var countryTerritories in mapBefore2010.values) {
-    for (var territory in countryTerritories) {
-      for (var machinery in territory.machineries) {
+  for (final countryTerritories in mapBefore2010.values) {
+    for (final territory in countryTerritories) {
+      for (final machinery in territory.machineries) {
         newMapBefore2010[machinery.id] = machinery.releaseDate.toLocal().year;
       }
     }
   }
   Map<String, int> newMapAfter2010 = {};
-  for (var countryTerritories in mapAfter2010.values) {
-    for (var territory in countryTerritories) {
-      for (var machinery in territory.machineries) {
+  for (final countryTerritories in mapAfter2010.values) {
+    for (final territory in countryTerritories) {
+      for (final machinery in territory.machineries) {
         newMapAfter2010[machinery.id] = machinery.releaseDate.toLocal().year;
       }
     }
@@ -198,7 +204,7 @@ void main(){
 
   var sortedMap1 = unitedMap.entries.toList()
     ..sort((a, b) => a.value.compareTo(b.value));
-  var halfIndex = (sortedMap.length / 2).floor();
+  var halfIndex = (sortedMap1.length / 2).floor();
   var sum = 0;
   for (var i = 0; i < halfIndex; i++) {
     sum += sortedMap[i].value;
