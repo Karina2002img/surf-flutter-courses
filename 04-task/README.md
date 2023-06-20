@@ -4,7 +4,11 @@ You can describe your results in any language that is convenient for you, not ju
 
 ## Description
 
-[Describe what you have done]
+Определила тип Strategy, который является функцией, принимающей два аргумента(список карт на столе и список карт в руке игрока) и возвращающая вероятность победы.
+
+Определила функцию printOpponentCardsStrategy, которая выводит список карт противника в консоль и возвращает вероятность победы.
+
+Определила метод класса PokerLayer, который принимает список карт на столе и объект Strategy, вызывает функцию strategy с аргументами cardOnDesk и _currentHand и сохраняет результат в переменную _surenessInWin.
 
 ## How to
 
@@ -12,9 +16,9 @@ You can describe your results in any language that is convenient for you, not ju
 
 ## Problems
 
-[Describe the problems you encountered]
+Не использованными остались _surenessInWin и matchingCards.
+
 
 ## More
 
 [Here you can brag about what you managed to implement or do something beyond the task]
-
