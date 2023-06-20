@@ -4,12 +4,17 @@ You can describe your results in any language that is convenient for you, not ju
 
 ## Description
 
-Создала switch case по выбору растений в заивисмости от бюджета:)
+[Describe what you have done]
 
 ## How to
 
+[Describe how to run your application if there are any issues]
+
 ## Problems
+
+[Describe the problems you encountered]
 
 ## More
 
 [Here you can brag about what you managed to implement or do something beyond the task]
+
