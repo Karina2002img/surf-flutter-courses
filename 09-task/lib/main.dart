@@ -11,7 +11,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'GestureMaster',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
       home: const RotationTransitionExample(),
@@ -37,7 +36,9 @@ class _RotationTransitionExampleState extends State<RotationTransitionExample>
     parent: _controller,
     curve: Curves.elasticOut,
   );
+
   bool isTapped = false;
+
   @override
   void dispose() {
     _controller.dispose();
@@ -47,9 +48,9 @@ class _RotationTransitionExampleState extends State<RotationTransitionExample>
   Offset position = Offset.zero;
 
   @override
-  void initState(){
-    //Offset position = Offset(MediaQuery.of(context).size.width / 2 - 100, MediaQuery.of(context).size.height / 2 - 100);
-    super.initState();
+  void didChangeDependencies() {
+    position = Offset(MediaQuery.of(context).size.width / 2 - 100, MediaQuery.of(context).size.height / 2 - 100);
+    super.didChangeDependencies();
   }
 
   @override
@@ -72,7 +73,6 @@ class _RotationTransitionExampleState extends State<RotationTransitionExample>
                     isTapped = !isTapped;
                   });
                 },
-
                 onPanUpdate: (details) {
                   setState(() {
                     position += details.delta;
@@ -89,7 +89,6 @@ class _RotationTransitionExampleState extends State<RotationTransitionExample>
                     ),
                   ),
                 ),
-
               ),
             ),
           ],
