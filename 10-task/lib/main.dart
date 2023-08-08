@@ -34,6 +34,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size.height / 3;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
@@ -42,7 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Column(
         children: [
           Container(
-            height: MediaQuery.of(context).size.height / 3,
+            height: size,
             width: MediaQuery.of(context).size.width,
             color: Colors.white60,
             child: Row(
@@ -76,102 +77,68 @@ class _MyHomePageState extends State<MyHomePage> {
               ],
             ),
           ),
-          Container(
-            height: MediaQuery.of(context).size.height / (3.615 / 2),
-            alignment: Alignment.bottomCenter,
-            width: MediaQuery.of(context).size.width,
-            //color: Colors.redAccent,
-
-            child: Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(
-                    vertical: 15,
+          Expanded(
+            child: Container(
+                //color: Colors.red,
+                width: double.infinity,
+                child: SingleChildScrollView(
+                    child: Column(children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                      vertical: 15,
+                    ),
                   ),
-                ),
-                Text(
-                  'A litle more:',
-                  style: TextStyle(
-                    fontSize: 40,
-                    decoration: TextDecoration.underline,
+                  Text(
+                    'A litle more:',
+                    style: TextStyle(
+                      fontSize: 40,
+                      decoration: TextDecoration.underline,
+                    ),
                   ),
-                ),
-                Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 15,
-                      ),
+                      Text(
+                    'My experience',
+                    style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                  ),
+                  SvgPicture.asset(
+                    'assets/icons/experience.svg',
+                    width: 100,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                      vertical: 15,
                     ),
-                    Text(
-                      'My experience',
-                      style: TextStyle(
-                        fontSize: 25,
-                      ),
+                  ),
+                      Text(
+                    'A little C, and a little\n more Python',
+                    style: TextStyle(
+                      fontSize: 20,
                     ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 15,
-                      ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                      vertical: 15,
                     ),
-                    Text(
-                      'My hobby',
-                      style: TextStyle(
-                        fontSize: 25,
-                      ),
+                  ),
+                  Text(
+                    'My hobby',
+                    style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                  ),
+                  SvgPicture.asset(
+                    'assets/icons/sphinx.svg',
+                    width: 100,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                      vertical: 15,
                     ),
-                  ],
-                ),
-                Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 30,
-                      ),
+                  ),
+                  Text(
+                    'I like plants, creativity\n and sports, now I am\n learning to swim',
+                    style: TextStyle(
+                      fontSize: 20,
                     ),
-                    SvgPicture.asset(
-                      'assets/icons/experience.svg',
-                      width: 100,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 50,
-                      ),
-                    ),
-                    SvgPicture.asset(
-                      'assets/icons/sphinx.svg',
-                      width: 100,
-                    ),
-                  ],
-                ),
-                Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 8,
-                      ),
-                    ),
-                    Text(
-                      'A little C, and\n a little more\n Python',
-                      style: TextStyle(
-                        fontSize: 20,
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 25,
-                      ),
-                    ),
-                    Text(
-                      'I like plants,\n creativity and\n sports, now I am\n learning to swim',
-                      style: TextStyle(
-                        fontSize: 20,
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
+                  ),
+                ]))),
           ),
         ],
       ),
