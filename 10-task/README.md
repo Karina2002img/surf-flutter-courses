@@ -8,12 +8,10 @@ You can describe your results in any language that is convenient for you, not ju
 - кастомный шрифт
 - SVG иконки
 - просто изображение
-- Было много идей, как сделать экран интересней, но что-то пошло не так 
+- Изменила экран, так что теперь приложение работает на разных экранах
 
 ## How to
-
 ## Problems
-Я использовала на эмуляторе Pixel XL, пока что с адаптивностью у меня проблемы :(
 ## More
 
 [Here you can brag about what you managed to implement or do something beyond the task]
