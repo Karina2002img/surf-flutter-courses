@@ -1,0 +1,4 @@
+#Thu Aug 17 18:42:08 EET 2023
+base.0=/Users/Karina/Dev/task11/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
