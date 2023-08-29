@@ -1,16 +1,22 @@
-# task11
+# Description of your result
 
-A new Flutter project.
+You can describe your results in any language that is convenient for you, not just English.
 
-## Getting Started
+## Description
+Экран приближенно сверстан по макету:)
 
-This project is a starting point for a Flutter application.
+Вариантов сортировки немного больше из-за того, что я не до конца прочитала задание, а смотрела на макет;
 
-A few resources to get you started if this is your first Flutter project:
+Также в карточку товара я не добавляла текст с категорией, потому что по заданию они итк сгруппированы по категориям и на макете этого нет;
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Сортировка как указано в задании происходит внутри категории.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## How to
+
+## Problems
+Не получилось запустить на IOS
+Не получилось выровнять кнопку сортировки: это IconButton + контейнер как фон (когда иконка была просто иконкой, а не иконкой-кнопкой - все работало нормльно)
+Также проблемы с лоудером загрузки, он врроде есть и вроде нет:(
+## More
+
+[Here you can brag about what you managed to implement or do something beyond the task]
