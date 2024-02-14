@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
-import 'dart:convert';
-import 'package:hexcolor/hexcolor.dart';
-import 'package:clipboard/clipboard.dart';
 import 'package:flutter_flushbar/flutter_flushbar.dart';
-import 'package:auto_size_text/auto_size_text.dart';
+import 'screens/splashScreen.dart';
 
-part 'model.dart';
-part 'all.dart';
+
 
 
 void main() {
@@ -30,7 +26,22 @@ class MyApp extends StatelessWidget {
   }
 }
 
-
+// функция показа сообщения об успешном копировании hex
+void showHexCopiedMessage(BuildContext context) {
+  Flushbar(
+    flushbarPosition: FlushbarPosition.BOTTOM,
+    backgroundColor: Colors.white,
+    duration: const Duration(seconds: 3),
+    messageText: const Center(
+      child: Text(
+        "Hex скопирован",
+        style: TextStyle(
+          fontSize: 20.0,
+        ),
+      ),
+    ),
+  ).show(context);
+}
 
 
 

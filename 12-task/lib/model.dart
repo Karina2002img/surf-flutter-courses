@@ -1,4 +1,5 @@
-part of 'main.dart';
+// part of 'main.dart';
+import 'dart:convert';
 
 const String colors = """
 {
