@@ -2,9 +2,10 @@ import 'package:hexcolor/hexcolor.dart';
 import 'package:clipboard/clipboard.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'newScreen.dart';
-import '../model.dart';
-import '../main.dart';
+
+import 'package:copy_task12/util/mapJson.dart';
+import 'package:copy_task12/screens/newScreen.dart';
+import 'package:copy_task12/util/showHexCopiedMessage.dart';
 
 
 //экран с сеткой
@@ -16,12 +17,17 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => _MyHomePageState();
 }
 class _MyHomePageState extends State<MyHomePage> {
+  late MapJson mapJson;
+
+  @override
+  void initState() {
+    super.initState();
+    mapJson = MapJson();
+    mapJson.receivingMap();
+  }
 
   @override
   Widget build(BuildContext context) {
-    final mapJson = MapJson();
-    mapJson.receivingMap();
-
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 100,
@@ -86,7 +92,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ],
             ),
           ),
-        )).toList(),
+        )).toList()
       ),
     );
   }

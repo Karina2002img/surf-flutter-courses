@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:clipboard/clipboard.dart';
-import '../main.dart';
-import '../widgets/container_widget.dart';
+import 'package:copy_task12/util/showHexCopiedMessage.dart';
+import 'package:copy_task12/widgets/container_widget.dart';
 
 //новый экран с конкретным цветом
 class NewScreen extends StatefulWidget {
