@@ -1,28 +1,23 @@
-import 'package:shared_preferences/shared_preferences.dart';
-
+import 'package:hive/hive.dart';
 
 class StorageService {
   static const _themeKey = 'theme';
   static const _schemeKey = 'scheme';
+  final Box<int> _settingsBox = Hive.box<int>('settings');
 
   Future<void> saveTheme(int themeIndex) async {
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.setInt(_themeKey, themeIndex);
+    await _settingsBox.put(_themeKey, themeIndex);
   }
 
   Future<void> saveScheme(int schemeIndex) async {
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.setInt(_schemeKey, schemeIndex);
+    await _settingsBox.put(_schemeKey, schemeIndex);
   }
 
-  Future<int> loadTheme() async {
-    final prefs = await SharedPreferences.getInstance();
-    return prefs.getInt(_themeKey) ?? 0;
+  int loadTheme() {
+    return _settingsBox.get(_themeKey, defaultValue: 0)!;
   }
 
-  Future<int> loadScheme() async {
-    final prefs = await SharedPreferences.getInstance();
-    return prefs.getInt(_schemeKey) ?? 0;
+  int loadScheme() {
+    return _settingsBox.get(_schemeKey, defaultValue: 0)!;
   }
 }
-

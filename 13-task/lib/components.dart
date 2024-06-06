@@ -3,7 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:new_task13/controller.dart';
 
 class ChoosingColorScheme extends StatefulWidget {
-  final ColorSchemeType selectedScheme;
+  final ColorSchemeType? selectedScheme;  // изменено на ColorSchemeType?
   final Function(ColorSchemeType) onSchemeSelected;
 
   const ChoosingColorScheme({
@@ -17,7 +17,7 @@ class ChoosingColorScheme extends StatefulWidget {
 }
 
 class _ChoosingColorSchemeState extends State<ChoosingColorScheme> {
-  late ColorSchemeType _selectedScheme;
+  late ColorSchemeType? _selectedScheme;  // изменено на ColorSchemeType?
 
   @override
   void initState() {
@@ -75,7 +75,7 @@ class _ChoosingColorSchemeState extends State<ChoosingColorScheme> {
                   setState(() {
                     _selectedScheme = ColorSchemeType.green;
                   });
-                  widget.onSchemeSelected(_selectedScheme);
+                  widget.onSchemeSelected(_selectedScheme!); // ! для разрешения null
                 },
                 child: containerInRowColourScheme(
                   'assets/icons/1.svg',
@@ -92,7 +92,7 @@ class _ChoosingColorSchemeState extends State<ChoosingColorScheme> {
                   setState(() {
                     _selectedScheme = ColorSchemeType.blue;
                   });
-                  widget.onSchemeSelected(_selectedScheme);
+                  widget.onSchemeSelected(_selectedScheme!); // ! для разрешения null
                 },
                 child: containerInRowColourScheme(
                   'assets/icons/2.svg',
@@ -109,7 +109,7 @@ class _ChoosingColorSchemeState extends State<ChoosingColorScheme> {
                   setState(() {
                     _selectedScheme = ColorSchemeType.orange;
                   });
-                  widget.onSchemeSelected(_selectedScheme);
+                  widget.onSchemeSelected(_selectedScheme!); // ! для разрешения null
                 },
                 child: containerInRowColourScheme(
                   'assets/icons/3.svg',

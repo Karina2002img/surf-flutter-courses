@@ -6,31 +6,31 @@ enum AppTheme { system, dark, light }
 enum ColorSchemeType { green, blue, orange }
 
 class ThemeNotifier extends ChangeNotifier {
-  // final StorageService _storageService = StorageService();
+  final StorageService _storageService;
 
   AppTheme _theme = AppTheme.system;
   ColorSchemeType _scheme = ColorSchemeType.green;
 
   ThemeData _currentThemeData = greenLightTheme;
 
+  ThemeNotifier(this._storageService) {
+    _loadFromPreferences();
+  }
+
   AppTheme get theme => _theme;
   ColorSchemeType get scheme => _scheme;
   ThemeData get currentThemeData => _currentThemeData;
 
-  // ThemeNotifier() {
-  //   Future.microtask(() => _loadFromPreferences());
-  // }
-
   Future<void> setTheme(AppTheme theme) async {
     _theme = theme;
-    // await _saveToPreferences();
+    await _saveToPreferences();
     _updateTheme();
     notifyListeners();
   }
 
   Future<void> setScheme(ColorSchemeType scheme) async {
     _scheme = scheme;
-    // await _saveToPreferences();
+    await _saveToPreferences();
     _updateTheme();
     notifyListeners();
   }
@@ -81,18 +81,17 @@ class ThemeNotifier extends ChangeNotifier {
     return title;
   }
 
-  // Future<void> _saveToPreferences() async {
-  //   await _storageService.saveTheme(_theme.index);
-  //   await _storageService.saveScheme(_scheme.index);
-  // }
+  Future<void> _saveToPreferences() async {
+    await _storageService.saveTheme(_theme.index);
+    await _storageService.saveScheme(_scheme.index);
+  }
 
-  // Future<void> _loadFromPreferences() async {
-  //   final themeIndex = await _storageService.loadTheme();
-  //   final schemeIndex = await _storageService.loadScheme();
-  //   _theme = AppTheme.values[themeIndex];
-  //   _scheme = ColorSchemeType.values[schemeIndex];
-  //   _updateTheme();
-  //   notifyListeners();
-  // }
+  void _loadFromPreferences() {
+    final themeIndex = _storageService.loadTheme();
+    final schemeIndex = _storageService.loadScheme();
+    _theme = AppTheme.values[themeIndex];
+    _scheme = ColorSchemeType.values[schemeIndex];
+    _updateTheme();
+    notifyListeners();
+  }
 }
-

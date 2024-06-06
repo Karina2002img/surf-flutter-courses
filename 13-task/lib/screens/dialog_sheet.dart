@@ -13,7 +13,7 @@ class ModalBottomSheetDemo extends StatefulWidget {
 class _ModalBottomSheetDemoState extends State<ModalBottomSheetDemo> {
   late AppTheme _selectedTheme;
   late ColorSchemeType _selectedScheme;
-  late ColorSchemeType _temporaryScheme;
+  late ColorSchemeType? _temporaryScheme;  // изменено на ColorSchemeType?
 
   @override
   void initState() {
@@ -72,6 +72,7 @@ class _ModalBottomSheetDemoState extends State<ModalBottomSheetDemo> {
                               onChanged: (AppTheme? value) {
                                 setState(() {
                                   _selectedTheme = value!;
+                                  _temporaryScheme = null;  // Сбросить цветовую схему
                                 });
                               },
                             ),
@@ -82,6 +83,7 @@ class _ModalBottomSheetDemoState extends State<ModalBottomSheetDemo> {
                               onChanged: (AppTheme? value) {
                                 setState(() {
                                   _selectedTheme = value!;
+                                  _temporaryScheme = null;  // Сбросить цветовую схему
                                 });
                               },
                             ),
@@ -101,6 +103,7 @@ class _ModalBottomSheetDemoState extends State<ModalBottomSheetDemo> {
                               onChanged: (AppTheme? value) {
                                 setState(() {
                                   _selectedTheme = value!;
+                                  _temporaryScheme = null;  // Сбросить цветовую схему
                                 });
                               },
                             ),
@@ -116,7 +119,7 @@ class _ModalBottomSheetDemoState extends State<ModalBottomSheetDemo> {
                             ElevatedButton(
                               onPressed: () {
                                 Provider.of<ThemeNotifier>(context, listen: false).setTheme(_selectedTheme);
-                                Provider.of<ThemeNotifier>(context, listen: false).setScheme(_temporaryScheme);
+                                Provider.of<ThemeNotifier>(context, listen: false).setScheme(_temporaryScheme ?? _selectedScheme); // Установка схемы только если она выбрана
                                 Navigator.of(context).pop();
                               },
                               child: const Text('Применить'),

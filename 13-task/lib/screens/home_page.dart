@@ -3,7 +3,6 @@ import 'package:new_task13/screens/dialog_sheet.dart';
 import 'package:new_task13/controller.dart';
 import 'package:provider/provider.dart';
 
-
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
 
@@ -83,7 +82,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   top: 10,
                 ),
                 width: MediaQuery.of(context).size.width,
-                height: 60, //нужно поправить
+                height: 60, // нужно поправить
                 decoration: BoxDecoration(
                   color: Colors.pinkAccent,
                   borderRadius: BorderRadius.circular(15),
@@ -112,7 +111,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   top: 10,
                 ),
                 width: MediaQuery.of(context).size.width,
-                height: 60, //нужно поправить
+                height: 60, // нужно поправить
                 decoration: BoxDecoration(
                   color: Colors.pinkAccent,
                   borderRadius: BorderRadius.circular(15),
@@ -141,7 +140,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   top: 10,
                 ),
                 width: MediaQuery.of(context).size.width,
-                height: 60, //нужно поправить
+                height: 60, // нужно поправить
                 decoration: BoxDecoration(
                   color: Colors.pinkAccent,
                   borderRadius: BorderRadius.circular(15),
@@ -170,7 +169,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   top: 10,
                 ),
                 width: MediaQuery.of(context).size.width,
-                height: 60, //нужно поправить
+                height: 60, // нужно поправить
                 decoration: BoxDecoration(
                   color: Colors.pinkAccent,
                   borderRadius: BorderRadius.circular(15),
@@ -199,7 +198,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   top: 10,
                 ),
                 width: MediaQuery.of(context).size.width,
-                height: 60, //нужно поправить
+                height: 60, // нужно поправить
                 decoration: BoxDecoration(
                   color: Colors.pinkAccent,
                   borderRadius: BorderRadius.circular(15),
@@ -232,7 +231,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   top: 10,
                 ),
                 width: MediaQuery.of(context).size.width,
-                height: 60, //нужно поправить
+                height: 60, // нужно поправить
                 decoration: BoxDecoration(
                   color: Colors.pinkAccent,
                   borderRadius: BorderRadius.circular(15),

@@ -13,7 +13,11 @@ ThemeData baseLightTheme = ThemeData(
 ThemeData baseDarkTheme = ThemeData(
   brightness: Brightness.dark,
   appBarTheme: const AppBarTheme(
-    titleTextStyle: TextStyle(color: AppColorsDark.colorAppBarColorTitleDark, fontSize: 18, fontWeight: FontWeight.w700),
+    titleTextStyle: TextStyle(
+      color: AppColorsDark.colorAppBarColorTitleDark,
+      fontSize: 18,
+      fontWeight: FontWeight.w700,
+    ),
   ),
 );
 
@@ -34,7 +38,8 @@ ThemeData greenLightTheme = baseLightTheme.copyWith(
         return AppColors.colorRadioButtonActiveGreen; // Цвет для активного состояния
       }
       return Colors.black; // Цвет для неактивного состояния
-    }),),
+    }),
+  ),
 );
 
 ThemeData blueLightTheme = baseLightTheme.copyWith(
@@ -53,7 +58,8 @@ ThemeData blueLightTheme = baseLightTheme.copyWith(
         return AppColors.colorRadioButtonActiveBlue; // Цвет для активного состояния
       }
       return Colors.black; // Цвет для неактивного состояния
-    }),),
+    }),
+  ),
 );
 
 ThemeData orangeLightTheme = baseLightTheme.copyWith(
@@ -63,8 +69,8 @@ ThemeData orangeLightTheme = baseLightTheme.copyWith(
     titleTextStyle: baseTitleTextStyle.copyWith(color: AppColorsLight.colorAppBarColorTitleLightOrange),
   ),
   scaffoldBackgroundColor: AppColorsLight.bgBodyLightOrange,
-bottomSheetTheme: const BottomSheetThemeData(
-  backgroundColor: AppColorsLight.bgColorModalBottomSheetLightOrange,
+  bottomSheetTheme: const BottomSheetThemeData(
+    backgroundColor: AppColorsLight.bgColorModalBottomSheetLightOrange,
   ),
   radioTheme: RadioThemeData(
     fillColor: WidgetStateProperty.resolveWith<Color>((states) {
@@ -72,11 +78,11 @@ bottomSheetTheme: const BottomSheetThemeData(
         return AppColors.colorRadioButtonActiveOrange; // Цвет для активного состояния
       }
       return Colors.black; // Цвет для неактивного состояния
-    }),),
+    }),
+  ),
 );
 
-
-//Темные темы
+// Темные темы
 ThemeData greenDarkTheme = baseDarkTheme.copyWith(
   appBarTheme: baseDarkTheme.appBarTheme.copyWith(
     backgroundColor: AppColorsDark.colorAppBarBgDarkGreen,
@@ -92,7 +98,8 @@ ThemeData greenDarkTheme = baseDarkTheme.copyWith(
         return AppColors.colorRadioButtonActiveGreen; // Цвет для активного состояния
       }
       return Colors.white60; // Цвет для неактивного состояния
-    }),),
+    }),
+  ),
 );
 
 ThemeData blueDarkTheme = baseDarkTheme.copyWith(
@@ -110,7 +117,8 @@ ThemeData blueDarkTheme = baseDarkTheme.copyWith(
         return AppColors.colorRadioButtonActiveBlue; // Цвет для активного состояния
       }
       return Colors.white60; // Цвет для неактивного состояния
-    }),),
+    }),
+  ),
 );
 
 ThemeData orangeDarkTheme = baseDarkTheme.copyWith(
@@ -128,5 +136,6 @@ ThemeData orangeDarkTheme = baseDarkTheme.copyWith(
         return AppColors.colorRadioButtonActiveOrange; // Цвет для активного состояния
       }
       return Colors.white60; // Цвет для неактивного состояния
-    }),),
+    }),
+  ),
 );
