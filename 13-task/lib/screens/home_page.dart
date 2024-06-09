@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:new_task13/components.dart';
 import 'package:new_task13/screens/dialog_sheet.dart';
 import 'package:new_task13/controller.dart';
 import 'package:provider/provider.dart';
+import 'package:new_task13/colorUI.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -27,9 +29,8 @@ class _MyHomePageState extends State<MyHomePage> {
         actions: [
           TextButton(
             onPressed: () {},
-            child: Text(
+            child: const Text(
               'Save',
-              style: TextStyle(color: Theme.of(context).appBarTheme.actionsIconTheme?.color),
             ),
           ),
         ],
@@ -57,14 +58,17 @@ class _MyHomePageState extends State<MyHomePage> {
                   top: 0,
                   child: TextButton(
                     onPressed: () {},
-                    child: const Text('Edit'),
+                    child: const Text('Edit',
+                      style: TextStyle(color: Colors.white),
+                    ),
                   ),
                 ),
               ],
             ),
-            const Padding(
-              padding: EdgeInsets.only(top: 24),
-              child: Text('Мои награды'),
+             Padding(
+              padding: const EdgeInsets.only(top: 24),
+              child: Text('Мои награды',
+              style: Theme.of(context).textTheme.bodyLarge),
             ),
             const Padding(
               padding: EdgeInsets.only(bottom: 24, top: 12),
@@ -73,185 +77,49 @@ class _MyHomePageState extends State<MyHomePage> {
                 style: TextStyle(fontSize: 32),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(bottom: 8, left: 16, right: 16),
-              child: Container(
-                padding: const EdgeInsets.only(
-                  bottom: 10,
-                  left: 20,
-                  top: 10,
+            SizedBox(
+              height: 400,
+              child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      const FormsContainer(textForm: 'Имя', textMok: 'Маркус'),
+                      const FormsContainer(textForm: 'Email', textMok: 'MarkusHSS@gmail.com'),
+                      const FormsContainer(textForm: 'Дата рождения', textMok: '03.03.1986'),
+                      const FormsContainer(textForm: 'Команда', textMok: 'Сборная Швеции'),
+                      FormsContainer(
+                        textForm: 'Позиция',
+                        textMok: 'Скип',
+                        trailingIcon: IconButton(
+                          onPressed: (){},
+                          icon: const Icon(Icons.chevron_right),
+                        ),
+                      ),
+                      FormsContainer(
+                        textForm: 'Тема оформления',
+                        textMok: themeNotifier.textTitleTheme(),
+                        trailingIcon: const ModalBottomSheetDemo(),
+                      ),
+                    ],
+                  ),
                 ),
-                width: MediaQuery.of(context).size.width,
-                height: 60, // нужно поправить
-                decoration: BoxDecoration(
-                  color: Colors.pinkAccent,
-                  borderRadius: BorderRadius.circular(15),
+            ),
+        Expanded(
+          child: Align(
+            alignment: Alignment.bottomCenter,
+            child: Padding(
+              padding: const EdgeInsets.only(left: 16.0, right: 16, bottom: 30),
+              child: ElevatedButton(
+                onPressed: (){},
+                style: ElevatedButton.styleFrom(
+                  fixedSize: Size(MediaQuery.of(context).size.width, 48.0),
+                  foregroundColor: AppColors.titleColorButtonLogOut,
+                  side: const BorderSide(color: AppColors.borderColorButtonLogOut),
                 ),
-                alignment: Alignment.centerLeft,
-                child: const Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text('Имя'),
-                        Text('Маркус'),
-                      ],
-                    ),
-                  ],
-                ),
+                child: const Text('Log Out'),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(bottom: 8, left: 16, right: 16),
-              child: Container(
-                padding: const EdgeInsets.only(
-                  bottom: 10,
-                  left: 20,
-                  top: 10,
-                ),
-                width: MediaQuery.of(context).size.width,
-                height: 60, // нужно поправить
-                decoration: BoxDecoration(
-                  color: Colors.pinkAccent,
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                alignment: Alignment.centerLeft,
-                child: const Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text('Email'),
-                        Text('MarkusHSS@gmail.com'),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(bottom: 8, left: 16, right: 16),
-              child: Container(
-                padding: const EdgeInsets.only(
-                  bottom: 10,
-                  left: 20,
-                  top: 10,
-                ),
-                width: MediaQuery.of(context).size.width,
-                height: 60, // нужно поправить
-                decoration: BoxDecoration(
-                  color: Colors.pinkAccent,
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                alignment: Alignment.centerLeft,
-                child: const Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text('Дата рождения'),
-                        Text('03.03.1986'),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(bottom: 8, left: 16, right: 16),
-              child: Container(
-                padding: const EdgeInsets.only(
-                  bottom: 10,
-                  left: 20,
-                  top: 10,
-                ),
-                width: MediaQuery.of(context).size.width,
-                height: 60, // нужно поправить
-                decoration: BoxDecoration(
-                  color: Colors.pinkAccent,
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                alignment: Alignment.centerLeft,
-                child: const Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text('Команда'),
-                        Text('Сборная Швеции'),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(bottom: 8, left: 16, right: 16),
-              child: Container(
-                padding: const EdgeInsets.only(
-                  bottom: 10,
-                  left: 20,
-                  top: 10,
-                ),
-                width: MediaQuery.of(context).size.width,
-                height: 60, // нужно поправить
-                decoration: BoxDecoration(
-                  color: Colors.pinkAccent,
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                alignment: Alignment.centerLeft,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    const Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text('Позиция'),
-                        Text('Скип'),
-                      ],
-                    ),
-                    IconButton(
-                      onPressed: () {},
-                      icon: const Icon(Icons.chevron_right),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(bottom: 8, left: 16, right: 16),
-              child: Container(
-                padding: const EdgeInsets.only(
-                  bottom: 10,
-                  left: 20,
-                  top: 10,
-                ),
-                width: MediaQuery.of(context).size.width,
-                height: 60, // нужно поправить
-                decoration: BoxDecoration(
-                  color: Colors.pinkAccent,
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                alignment: Alignment.centerLeft,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text('Тема оформления'),
-                        Text(themeNotifier.textTitleTheme()),
-                      ],
-                    ),
-                    ModalBottomSheetDemo(),
-                  ],
-                ),
-              ),
-            ),
+          ),
+        ),
           ],
         ),
       ),

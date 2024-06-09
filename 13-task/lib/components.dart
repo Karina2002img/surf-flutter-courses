@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:new_task13/controller.dart';
+import 'package:new_task13/theme.dart';
+import 'package:new_task13/colorUI.dart';
 
 class ChoosingColorScheme extends StatefulWidget {
-  final ColorSchemeType? selectedScheme;  // изменено на ColorSchemeType?
+  final ColorSchemeType? selectedScheme;
   final Function(ColorSchemeType) onSchemeSelected;
 
   const ChoosingColorScheme({
@@ -17,7 +19,7 @@ class ChoosingColorScheme extends StatefulWidget {
 }
 
 class _ChoosingColorSchemeState extends State<ChoosingColorScheme> {
-  late ColorSchemeType? _selectedScheme;  // изменено на ColorSchemeType?
+  late ColorSchemeType? _selectedScheme;
 
   @override
   void initState() {
@@ -35,7 +37,7 @@ class _ChoosingColorSchemeState extends State<ChoosingColorScheme> {
       height: 64,
       width: 103,
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Theme.of(context).customContainerColor2,
         borderRadius: BorderRadius.circular(6),
         border: isPressed
             ? Border.all(
@@ -75,13 +77,13 @@ class _ChoosingColorSchemeState extends State<ChoosingColorScheme> {
                   setState(() {
                     _selectedScheme = ColorSchemeType.green;
                   });
-                  widget.onSchemeSelected(_selectedScheme!); // ! для разрешения null
+                  widget.onSchemeSelected(_selectedScheme!);
                 },
                 child: containerInRowColourScheme(
                   'assets/icons/1.svg',
                   'Схема 1',
                   _selectedScheme == ColorSchemeType.green,
-                  Colors.greenAccent,
+                  AppColors.colorAppBarDecorationGreen,
                 ),
               ),
             ),
@@ -92,13 +94,13 @@ class _ChoosingColorSchemeState extends State<ChoosingColorScheme> {
                   setState(() {
                     _selectedScheme = ColorSchemeType.blue;
                   });
-                  widget.onSchemeSelected(_selectedScheme!); // ! для разрешения null
+                  widget.onSchemeSelected(_selectedScheme!);
                 },
                 child: containerInRowColourScheme(
                   'assets/icons/2.svg',
                   'Схема 2',
                   _selectedScheme == ColorSchemeType.blue,
-                  Colors.blue,
+                  AppColors.colorAppBarDecorationBlue,
                 ),
               ),
             ),
@@ -109,19 +111,71 @@ class _ChoosingColorSchemeState extends State<ChoosingColorScheme> {
                   setState(() {
                     _selectedScheme = ColorSchemeType.orange;
                   });
-                  widget.onSchemeSelected(_selectedScheme!); // ! для разрешения null
+                  widget.onSchemeSelected(_selectedScheme!);
                 },
                 child: containerInRowColourScheme(
                   'assets/icons/3.svg',
                   'Схема 3',
                   _selectedScheme == ColorSchemeType.orange,
-                  Colors.orangeAccent,
+                  AppColors.colorAppBarDecorationOrange,
                 ),
               ),
             ),
           ],
         ),
       ],
+    );
+  }
+}
+
+
+class FormsContainer extends StatelessWidget {
+  final String textForm;
+  final String textMok;
+  final Color? color;
+  final Widget? trailingIcon;
+
+  const FormsContainer({
+    super.key,
+    required this.textForm,
+    required this.textMok,
+    this.color,
+    this.trailingIcon,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 8, left: 16, right: 16),
+      child: Container(
+        padding: const EdgeInsets.only(bottom: 10, left: 20, top: 10),
+        width: MediaQuery.of(context).size.width,
+        height: 65,
+        decoration: BoxDecoration(
+          color: Theme.of(context).customContainerColor,
+          borderRadius: BorderRadius.circular(15),
+        ),
+        alignment: Alignment.centerLeft,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  textForm,
+                  style: Theme.of(context).textTheme.bodyLarge,
+                ),
+                Text(
+                    textMok,
+                    style: Theme.of(context).textTheme.bodyMedium),
+              ],
+            ),
+            if (trailingIcon != null) trailingIcon!,
+          ],
+        ),
+      ),
     );
   }
 }

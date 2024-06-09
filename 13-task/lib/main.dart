@@ -10,7 +10,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await Hive.initFlutter();
-  await Hive.openBox<int>('settings'); // Создание или открытие хранилища
+  await Hive.openBox<int>('settings');
 
   final storageService = StorageService();
 
@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
     return Consumer<ThemeNotifier>(
       builder: (context, themeNotifier, child) {
         return MaterialApp(
-          title: 'Flutter Demo',
+          title: 'Change theme',
           home: const MyHomePage(),
           theme: themeNotifier.currentThemeData,
         );

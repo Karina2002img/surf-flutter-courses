@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:new_task13/controller.dart';
 import 'package:new_task13/components.dart';
+import 'package:new_task13/theme.dart';
 
 class ModalBottomSheetDemo extends StatefulWidget {
   const ModalBottomSheetDemo({super.key});
@@ -13,7 +14,7 @@ class ModalBottomSheetDemo extends StatefulWidget {
 class _ModalBottomSheetDemoState extends State<ModalBottomSheetDemo> {
   late AppTheme _selectedTheme;
   late ColorSchemeType _selectedScheme;
-  late ColorSchemeType? _temporaryScheme;  // изменено на ColorSchemeType?
+  late ColorSchemeType? _temporaryScheme;
 
   @override
   void initState() {
@@ -72,7 +73,7 @@ class _ModalBottomSheetDemoState extends State<ModalBottomSheetDemo> {
                               onChanged: (AppTheme? value) {
                                 setState(() {
                                   _selectedTheme = value!;
-                                  _temporaryScheme = null;  // Сбросить цветовую схему
+                                  _temporaryScheme = null;
                                 });
                               },
                             ),
@@ -83,7 +84,7 @@ class _ModalBottomSheetDemoState extends State<ModalBottomSheetDemo> {
                               onChanged: (AppTheme? value) {
                                 setState(() {
                                   _selectedTheme = value!;
-                                  _temporaryScheme = null;  // Сбросить цветовую схему
+                                  _temporaryScheme = null;
                                 });
                               },
                             ),
@@ -103,7 +104,7 @@ class _ModalBottomSheetDemoState extends State<ModalBottomSheetDemo> {
                               onChanged: (AppTheme? value) {
                                 setState(() {
                                   _selectedTheme = value!;
-                                  _temporaryScheme = null;  // Сбросить цветовую схему
+                                  _temporaryScheme = null;
                                 });
                               },
                             ),
@@ -116,13 +117,27 @@ class _ModalBottomSheetDemoState extends State<ModalBottomSheetDemo> {
                                   });
                                 },
                               ),
-                            ElevatedButton(
-                              onPressed: () {
-                                Provider.of<ThemeNotifier>(context, listen: false).setTheme(_selectedTheme);
-                                Provider.of<ThemeNotifier>(context, listen: false).setScheme(_temporaryScheme ?? _selectedScheme); // Установка схемы только если она выбрана
-                                Navigator.of(context).pop();
-                              },
-                              child: const Text('Применить'),
+                            Container(
+                              height: 20,
+                            ),
+                            Align(
+                              alignment: Alignment.bottomCenter,
+                              child: Padding(
+                                padding: const EdgeInsets.only(left: 16.0, right: 16, bottom: 30),
+                                child: ElevatedButton(
+                                  onPressed: () {
+                                    Provider.of<ThemeNotifier>(context, listen: false).setTheme(_selectedTheme);
+                                    Provider.of<ThemeNotifier>(context, listen: false).setScheme(_temporaryScheme ?? _selectedScheme);
+                                    Navigator.of(context).pop();
+                                  },
+                                  style: ElevatedButton.styleFrom(
+                                    fixedSize: Size(MediaQuery.of(context).size.width, 48.0),
+                                      backgroundColor:Theme.of(context).customElevationButtonColor,
+                                      foregroundColor: Theme.of(context).customElevationButtonTitleColor,
+                                  ),
+                                  child: const Text('Применить'),
+                                ),
+                              ),
                             ),
                           ],
                         ),

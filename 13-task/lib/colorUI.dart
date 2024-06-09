@@ -78,9 +78,6 @@ class AppColorsLight {
   static const Color bgColorContainerInModalBottomSheetLightOrange = Color(0xFFFAF8F7);
 
   static const Color colorTitlesModalBottomSheetLight = Color(0xFF222222);
-
-
-
 }
 
 class AppColorsDark {
