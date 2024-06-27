@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:new_task13/screens/home_page.dart';
-import 'package:new_task13/controller.dart';
-import 'package:new_task13/storage.dart';
+import 'package:new_task13/presentation/screens/home_page.dart';
+import 'package:new_task13/domain/controller.dart';
+import 'package:new_task13/data/storage.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

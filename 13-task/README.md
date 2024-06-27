@@ -1,18 +1,16 @@
-# Description of your result
+# ispr13
 
-You can describe your results in any language that is convenient for you, not just English.
+A new Flutter project.
 
-## Description
-1) Главный экран - форма 
-2) При нажатии на иконку на одной из ячейке открывается модальное окно с выбором темы
-3) Выбор темы происходит по нажатию на кнопку применить 
+## Getting Started
 
-## How to
+This project is a starting point for a Flutter application.
 
-## Problems
-Возникла проблема с shared prefence, ошибок не было синтаксичеких, при сборке появлялась ошибка, 
-пробовала решить проблему, не вышло, из-за ограниченности времени сильно копать не стала, использовала другую библиотеку
+A few resources to get you started if this is your first Flutter project:
 
-## More
+- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
+- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-[Here you can brag about what you managed to implement or do something beyond the task]
+For help getting started with Flutter development, view the
+[online documentation](https://docs.flutter.dev/), which offers tutorials,
+samples, guidance on mobile development, and a full API reference.
